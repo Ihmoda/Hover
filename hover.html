@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Disappearing Ninja</title>
+    <title>Hover In / Out</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -12,14 +12,15 @@
 
         $(document).ready(function(){
 
-            $(".ninja").click(function(){
-                $(this).hide("slow");
+            $("img").hover(function(){
+                $(this).attr('temp', $(this).attr('src'));
+				$(this).attr('src', $(this).attr('alt-src'));
+				$(this).attr('alt-src', $(this).attr('temp'));
+            }, function(){
+                $(this).attr('temp', $(this).attr('src'));
+				$(this).attr('src', $(this).attr('alt-src'));
+				$(this).attr('alt-src', $(this).attr('temp'));
             });
-
-            $('button').click(function(){
-                $(".ninja").show("slow");
-            });
-
         });
     
     
@@ -32,23 +33,29 @@
 
     <div id="wrapper">
 
-        <h1>Disappearing Ninjas!</h1>
+        <h1>Hover In / Out</h1>
 
         <div class="row">
-            <img class="ninja" src="images/ninja.png" alt="ninja.png">
-            <img class="ninja" src="images/ninja.png" alt="ninja.png">
-            <img class="ninja" src="images/ninja.png" alt="ninja.png">
-            <img class="ninja ninjalast" src="images/ninja.png" alt="ninja.png">
+            <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+            <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+            <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+            <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+            <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+            <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+            <img class="ninja ninjalast" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+            <img class="ninja ninjalast hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
         </div>
 
         <div class="row">
-                <img class="ninja" src="images/ninja.png" alt="ninja.png">
-                <img class="ninja" src="images/ninja.png" alt="ninja.png">
-                <img class="ninja" src="images/ninja.png" alt="ninja.png">
-                <img class="ninja ninjalast" src="images/ninja.png" alt="ninja.png">
-        </div>
-
-        <button>Restore</button>
+                <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+                <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+                <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+                <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+                <img class="ninja" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+                <img class="ninja hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+                <img class="ninja ninjalast" src="images/anakin-skywalker.jpg" alt-src="images/darth-vader.jpg" temp="" alt="img1">
+                <img class="ninja ninjalast hidden" src="images/darth-vader.jpg" alt-src="anakin-skywalker.png" temp="" alt="img1">
+            </div>
 
     </div>
     
